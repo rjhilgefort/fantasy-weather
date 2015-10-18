@@ -19,5 +19,15 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  // Bootstrap
+  app.import({
+    development: app.bowerDirectory + '/bootstrap/dist/js/bootstrap.js',
+    production: app.bowerDirectory + '/bootstrap/dist/js/bootstrap.min.js',
+  });
+  app.import({
+    development: app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css',
+    production: app.bowerDirectory + '/bootstrap/dist/css/bootstrap.min.css',
+  });
+
   return app.toTree();
 };
