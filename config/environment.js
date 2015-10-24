@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'fantasy-weather',
+    podModulePrefix: 'fantasy-weather/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
