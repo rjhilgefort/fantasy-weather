@@ -1,10 +1,5 @@
-h4 = nfl.name
-ul
-  each nfl.teams as |team|
-    li #{team.name}
-    ul
-      li Full Name: #{team.fullName}
-      li Lat: {team.stadium.location.lat}
-      li Lng: {team.stadium.location.lng}
+each nfl.teams as |team i|
+  smart-column numPerRow=3 index=i total=nfl.teams.length
+    team-weather team=team
 
 = outlet
