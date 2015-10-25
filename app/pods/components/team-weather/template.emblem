@@ -1,0 +1,5 @@
+li #{team.name}
+ul
+  li Full Name: #{team.fullName}
+  li Lat: #{team.stadium.location.lat}
+  li Lng: #{team.stadium.location.lng}
