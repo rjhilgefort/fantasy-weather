@@ -1,16 +1,8 @@
 import Ember from 'ember';
-import _ from 'lodash/lodash';
 import defaults from 'fantasy-weather/mixins/defaults';
+import propertyValidation from 'fantasy-weather/mixins/property-validation';
 
-let CoreObject = Ember.Object.extend(defaults, {
-
-  isBlank(keyName) {
-    return Ember.isBlank(this.get(keyName));
-  },
-
-  isPresent(keyName) {
-    return !this.isBlank(keyName);
-  }
+let CoreObject = Ember.Object.extend(defaults, propertyValidation, {
 
 });
 
