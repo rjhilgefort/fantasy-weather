@@ -54,6 +54,19 @@ class <%= camelizedModuleName %> {
     return true;
   }
 
+  /**
+   * description
+   *
+   * @author yourName
+   *
+   * @static
+   * @name staticPublicFunction
+   * @return {undefined}
+   */
+  static staticPublicFunction() {
+    return true;
+  }
+
 }
 
 export default <%= camelizedModuleName %>;
