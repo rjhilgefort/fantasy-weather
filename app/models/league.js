@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import CoreObject from 'fantasy-weather/models/_core/core-object'
-import Team from 'fantasy-weather/models/team'
-import _ from 'lodash/lodash'
+import CoreObject from 'fantasy-weather/models/_core/core-object';
+import Team from 'fantasy-weather/models/team';
+import _ from 'lodash/lodash';
 
 let League = CoreObject.extend({
 

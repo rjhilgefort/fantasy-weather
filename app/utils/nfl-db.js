@@ -17,13 +17,12 @@ export default [
     name: "Bears",
     locationIdentifier: "city",
     stadium: {
-      identifier: "city",
       city: "Chicago",
       state: "Illinois",
       name: "",
       location: {
-        lat: 0,
-        lng: 0
+        lat: 41.862306,
+        lng: -87.616672
       },
       roofType: "",
     }
@@ -34,6 +33,7 @@ export default [
     stadium: {
       city: "Cincinnati",
       state: "Ohio",
+      name: "",
       location: {
         lat: 39.095442,
         lng: -84.516039
@@ -146,4 +146,4 @@ export default [
     locationName: "Minnesota"
   }
 */
-]
+];

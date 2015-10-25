@@ -1,4 +1,4 @@
-import League from 'fantasy-weather/models/league'
+import League from 'fantasy-weather/models/league';
 
 let NFL = League.extend({
 

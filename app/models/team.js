@@ -17,7 +17,7 @@ let Team = CoreObject.extend({
     this._super(...arguments);
 
     if (!_.contains(['city', 'state'], this.get('locationIdentifier'))) {
-      this.set('locationIdentifier', 'state');
+      this.set('locationIdentifier', 'city');
     }
 
     this.set('stadium', Stadium.create(this.get('stadium')));
@@ -34,7 +34,7 @@ let Team = CoreObject.extend({
     'locationName',
     function() {
       return `${this.get('locationName')} ${this.get('name')}`;
-}
+    }
   )
 
 
