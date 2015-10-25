@@ -3,6 +3,8 @@ ul
   each nfl.teams as |team|
     li = team.name
     ul
-      li = team.fullName
+      li Full Name: {{team.fullName}}
+      li Lat: {{team.stadium.location.lat}}
+      li Lng: {{team.stadium.location.lng}}
 
 = outlet
