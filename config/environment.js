@@ -24,7 +24,7 @@ module.exports = function(environment) {
       'script-src': "'self' https://cdn.firebase.com/ ",
       'font-src': "'self'",
       'connect-src': "'self'",
-      'img-src': "'self' http://i.nflcdn.com/",
+      'img-src': "'self' http://i.nflcdn.com/ http://cliparts.co/",
       'style-src': "'self'",
       'media-src': "'self'"
     }
