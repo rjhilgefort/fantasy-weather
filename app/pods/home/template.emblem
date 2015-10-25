@@ -1,3 +1,8 @@
 h4 = nfl.name
+ul
+  each nfl.teams as |team|
+    li = team.name
+    ul
+      li = team.fullName
 
 = outlet
