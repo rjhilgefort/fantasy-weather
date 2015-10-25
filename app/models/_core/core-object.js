@@ -1,16 +1,8 @@
 import Ember from 'ember';
 import _ from 'lodash/lodash';
+import defaults from 'fantasy-weather/mixins/defaults';
 
-let CoreObject = Ember.Object.extend({
-
-  init() {
-    this._super(...arguments);
-    this.defaultProperties(this._defaults());
-  },
-
-  _defaults() {
-    return {};
-  },
+let CoreObject = Ember.Object.extend(defaults, {
 
   isBlank(keyName) {
     return Ember.isBlank(this.get(keyName));
@@ -18,20 +10,6 @@ let CoreObject = Ember.Object.extend({
 
   isPresent(keyName) {
     return !this.isBlank(keyName);
-  },
-
-  default(keyName, value) {
-    if (this.isBlank(keyName)) {
-      this.set(keyName, value);
-    }
-    return value;
-  },
-
-  defaultProperties(hash) {
-    _.forEach(hash, (value, keyName) => {
-      this.default(keyName, value);
-    });
-    return hash;
   }
 
 });
