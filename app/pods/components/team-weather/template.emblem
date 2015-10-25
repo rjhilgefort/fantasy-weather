@@ -6,7 +6,7 @@
           h3.panel-title = team.name
         .col-md-4
           .pull-right
-            = team.abbreviation
+            team-logo team=team.abbreviation
     .panel-body
       li #{team.name}
       ul
