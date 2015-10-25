@@ -1,59 +1,59 @@
 /**
- * Class description
+ * Data class used to interface with nfl data stored on/in it
  *
- * @author yourName
+ * @author rjhilgefort
  *
  * @class nfl
  */
 class nfl {
 
   /**
-   * description
-   *
-   * @author yourName
+   * @author rjhilgefort
    *
    * @constructor
-   * @param {Object} params
-   *     @param {Type} [optional='default']: description
    * @return {undefined}
    */
-  constructor(params) {
-    let defaults = {
-      optional: "default"
-    };
-
-    // Merge passed in params over defaults
-    params = _.merge({}, defaults, params);
-
-    // Set params on instance
-    _.merge(this, params);
+  constructor() {
   }
 
   /**
-   * description
+   * Nfl teams "database"
    *
-   * @author yourName
+   * @author rjhilgefort
    *
-   * @private
-   * @name _privateInstanceFunction
-   * @return {undefined}
-   */
-  _privateInstanceFunction() {
-    return true;
+   * @static
+   * @property teams
+   * @return {Object}
+  teams: function() {
+    return new League({
+      bengals: new Team({
+        name: "Bengals",
+        locationName: "city"
+        stadium: new Stadium({
+          city: "Chicago",
+          state: "Illinois",
+          location: {
+            lat: 0
+            lng: 0
+          }
+      })
+    });
   }
-
-  /**
-   * description
-   *
-   * @author yourName
-   *
-   * @name publicInstanceFunction
-   * @return {undefined}
    */
-  publicInstanceFunction() {
-    return true;
-  }
 
-}
+};
 
 export default nfl;
+
+/*
+
+ fortyNiners: {
+ name: "49ers",
+ locationName: "San Francisco"
+ },
+ buccaneers': {
+ name: "Buccaneers",
+ locationName: "Tampa Bay"
+ }
+
+ */
