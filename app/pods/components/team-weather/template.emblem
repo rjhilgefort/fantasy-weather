@@ -1,5 +1,15 @@
-li #{team.name}
-ul
-  li Full Name: #{team.fullName}
-  li Lat: #{team.stadium.location.lat}
-  li Lng: #{team.stadium.location.lng}
+.col-md-4
+  .panel.panel-default
+    .panel-heading
+      .row
+        .col-md-8
+          h3.panel-title = team.name
+        .col-md-4
+          .pull-right
+            = team.abbreviation
+    .panel-body
+      li #{team.name}
+      ul
+        li Full Name: #{team.fullName}
+        li Lat: #{team.stadium.location.lat}
+        li Lng: #{team.stadium.location.lng}

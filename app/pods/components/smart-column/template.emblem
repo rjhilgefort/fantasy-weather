@@ -1,2 +1,3 @@
+/ smart-column numPerRow=3 index=i total=nfl.teams.length
 div class="col-md-#{columnSize}"
   yield

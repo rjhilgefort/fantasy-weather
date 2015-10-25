@@ -8,6 +8,8 @@ let Team = CoreObject.extend({
   _defaults() {
     return {
       name: "",
+      abbreviation: "",
+      logo: "",
       locationIdentifier: 'city',
       stadium: {}
     }
@@ -36,7 +38,6 @@ let Team = CoreObject.extend({
       return `${this.get('locationName')} ${this.get('name')}`;
     }
   )
-
 
 });
 

@@ -1,6 +1,8 @@
 export default [
   {
     name: "49ers",
+    abbreviation: "SF",
+    logo: "",
     locationIdentifier: "city",
     stadium: {
       city: "San Francisco",
@@ -15,6 +17,8 @@ export default [
   },
   {
     name: "Bears",
+    abbreviation: "CHI",
+    logo: "",
     locationIdentifier: "city",
     stadium: {
       city: "Chicago",
@@ -29,6 +33,8 @@ export default [
   },
   {
     name: "Bengals",
+    abbreviation: "CIN",
+    logo: "",
     locationIdentifier: "city",
     stadium: {
       city: "Cincinnati",
@@ -43,6 +49,8 @@ export default [
   },
   {
     name: "Bengals",
+    abbreviation: "CIN",
+    logo: "",
     locationIdentifier: "city",
     stadium: {
       city: "Cincinnati",
@@ -57,48 +65,8 @@ export default [
   },
   {
     name: "Bengals",
-    locationIdentifier: "city",
-    stadium: {
-      city: "Cincinnati",
-      state: "Ohio",
-      name: "",
-      location: {
-        lat: 39.095442,
-        lng: -84.516039
-      },
-      roofType: "open"
-    }
-  },
-  {
-    name: "Bengals",
-    locationIdentifier: "city",
-    stadium: {
-      city: "Cincinnati",
-      state: "Ohio",
-      name: "",
-      location: {
-        lat: 39.095442,
-        lng: -84.516039
-      },
-      roofType: "open"
-    }
-  },
-  {
-    name: "Bengals",
-    locationIdentifier: "city",
-    stadium: {
-      city: "Cincinnati",
-      state: "Ohio",
-      name: "",
-      location: {
-        lat: 39.095442,
-        lng: -84.516039
-      },
-      roofType: "open"
-    }
-  },
-  {
-    name: "Bengals",
+    abbreviation: "CIN",
+    logo: "",
     locationIdentifier: "city",
     stadium: {
       city: "Cincinnati",

@@ -1,5 +1,5 @@
-each nfl.teams as |team i|
-  smart-column numPerRow=3 index=i total=nfl.teams.length
+.row
+  each nfl.teams as |team i|
     team-weather team=team
 
 = outlet
