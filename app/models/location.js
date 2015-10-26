@@ -9,6 +9,10 @@ let Location = CoreObject.extend({
       lat: 0,
       lng: 0
     }
+  },
+
+  toString() {
+    return `${this.get('lat')},${this.get('lng')}`;
   }
 
 });

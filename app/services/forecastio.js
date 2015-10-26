@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 import AjaxService from 'ember-ajax/services/ajax';
 
 export default AjaxService.extend({
@@ -10,6 +11,28 @@ export default AjaxService.extend({
     let _baseUrl = this.get('_baseUrl');
     let _apiKey = this.get('_apiKey');
     return `${_baseUrl}/${_apiKey}`;
-  })
+  }),
+
+  request(url, options) {
+    if (!_.isPlainObject(options)) options = {};
+    options.dataType = "jsonp";
+
+    return this._super(url, options)
+      .then((response) => {
+        return response;
+      }, (error) => {
+        console.error(error);
+        throw error;
+      });
+  },
+
+  requestLocation(location, options) {
+    return this.request(location.toString(), options);
+  },
+
+  requestLocationTime(location, time, options) {
+    let url = `${location.toString()},${_.parseInt(time)}`;
+    return this.request(url, options);
+  }
 
 });

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 
 export default Ember.Component.extend({
 
@@ -6,7 +7,13 @@ export default Ember.Component.extend({
 
   init() {
     this._super(...arguments);
-    this.get('forecastio').request('39.095442,-84.516039', { dataType: "jsonp" });
+    let location = this.get('team.stadium.location');
+    // this.get('forecastio').requestLocationTime(location, _.now())
+    this.get('forecastio').requestLocation(location)
+      .then((response) => {
+        console.log(response);
+        return response;
+      });
   },
 
   team: null
