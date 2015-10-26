@@ -21,9 +21,9 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' https://cdn.firebase.com/ ",
+      'script-src': "'self' https://cdn.firebase.com/ https://api.forecast.io/",
       'font-src': "'self'",
-      'connect-src': "'self'",
+      'connect-src': "'self' https://api.forecast.io/",
       'img-src': "'self' http://i.nflcdn.com/ http://cliparts.co/",
       'style-src': "'self'",
       'media-src': "'self'"
