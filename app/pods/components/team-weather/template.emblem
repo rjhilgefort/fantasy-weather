@@ -8,8 +8,11 @@
           .pull-right
             team-logo team=team.abbreviation
     .panel-body
-      li #{team.name}
+      li Team
       ul
         li Full Name: #{team.fullName}
         li Lat: #{team.stadium.location.lat}
         li Lng: #{team.stadium.location.lng}
+      li Weather
+      ul
+        li Time: #{weather.currently.time}

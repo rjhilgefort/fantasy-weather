@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import _ from 'lodash/lodash';
 import AjaxService from 'ember-ajax/services/ajax';
+import moment from 'moment';
 
 export default AjaxService.extend({
 
@@ -19,6 +20,8 @@ export default AjaxService.extend({
 
     return this._super(url, options)
       .then((response) => {
+        console.log(response);
+        console.log(moment.unix(response.currently.time).format("MM/DD/YYYY"));
         return response;
       }, (error) => {
         console.error(error);
@@ -26,13 +29,23 @@ export default AjaxService.extend({
       });
   },
 
-  requestLocation(location, options) {
+  getLocation(location, options) {
     return this.request(location.toString(), options);
   },
 
-  requestLocationTime(location, time, options) {
-    let url = `${location.toString()},${_.parseInt(time)}`;
+  getLocationTime(location, time, options) {
+    let url = `${location.toString()},${time}`;
     return this.request(url, options);
-  }
+  },
+
+  getLocationNow(location) {
+    let now = moment().format();
+    return this.getLocationTime(location.toString(), now);
+  },
+
+  getLocationThisSunday(location) {
+    let now = moment().format();
+    return this.getLocationTime(location.toString(), now);
+  },
 
 });
