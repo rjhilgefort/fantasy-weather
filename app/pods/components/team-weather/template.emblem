@@ -16,3 +16,8 @@
       li Weather
       ul
         li Time: #{weather.currently.time}
+        li Temperature: #{weather.currently.temperature}
+        li Feels Like: #{weather.currently.apparentTemperature}
+        li Summary: #{weather.currently.summary}
+        li Rain Chance: #{weather.currently.precipProbability}
+        li Rain Intensity: #{weather.currently.precipIntensity}

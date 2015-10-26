@@ -1,6 +1,6 @@
 .container
 
   .page-header
-    h1 NFL Fantasy Football Weather <small>something else</small>
+    h1 NFL Football Weather
 
   = outlet
