@@ -48,38 +48,6 @@ export default [
     }
   },
   {
-    name: "Bengals",
-    abbreviation: "CIN",
-    logo: "",
-    locationIdentifier: "city",
-    stadium: {
-      city: "Cincinnati",
-      state: "Ohio",
-      name: "",
-      location: {
-        lat: 39.095442,
-        lng: -84.516039
-      },
-      roofType: "open"
-    }
-  },
-  {
-    name: "Bengals",
-    abbreviation: "",
-    logo: "",
-    locationIdentifier: "city",
-    stadium: {
-      city: "Cincinnati",
-      state: "Ohio",
-      name: "",
-      location: {
-        lat: 39.095442,
-        lng: -84.516039
-      },
-      roofType: "open"
-    }
-  }/*,
-  {
     name: "Bills",
     locationName: "Buffalo"
   },
@@ -183,5 +151,4 @@ export default [
     name: "Vikings",
     locationName: "Minnesota"
   }
-*/
 ];
