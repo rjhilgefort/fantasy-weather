@@ -3,7 +3,7 @@
     .panel-heading
       .row
         .col-md-8
-          h3.panel-title = team.name
+          h3.panel-title #{team.name}
         .col-md-4
           .pull-right
             team-logo team=team.abbreviation
@@ -21,3 +21,5 @@
         li Summary: #{weather.currently.summary}
         li Rain Chance: #{weather.currently.precipProbability}
         li Rain Intensity: #{weather.currently.precipIntensity}
+        li Icon id: #{weather.currently.icon}
+        li Icon: #{weather-icon weather.currently.icon}
