@@ -1,5 +1,6 @@
 .row
   each nfl.teams as |team i|
-    team-weather team=team
+    .col-md-4
+      team-weather team=team
 
 = outlet
