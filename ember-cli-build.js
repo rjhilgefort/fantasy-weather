@@ -19,5 +19,15 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  var importFont = function(font, options) {
+    var extensions = ['eot', 'svg', 'ttf', 'woff', 'woff2'];
+    extensions.forEach(function(extension) {
+      app.import(font + '.' + extension, options);
+    });
+  };
+
+  app.import(app.bowerDirectory + '/weather-icons/css/weather-icons.css');
+  importFont(app.bowerDirectory + '/weather-icons/font/weathericons-regular-webfont',  { destDir: 'font' })
+
   return app.toTree();
 };
