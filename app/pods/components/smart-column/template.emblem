@@ -1,3 +1,10 @@
 / smart-column numPerRow=3 index=i total=nfl.teams.length
+
+/ if needOpeningTag
+  / <div class="row">
+
 div class="col-md-#{columnSize}"
   yield
+
+/ if needClosingTag
+  / </div>
