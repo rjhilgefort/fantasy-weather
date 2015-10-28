@@ -1,7 +1,7 @@
 export default [
   {
     name: "Bengals",
-    abbreviation: "CIN",
+    abbr: "CIN",
     logo: "",
     locationIdentifier: "city",
     stadium: {
