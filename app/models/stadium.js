@@ -11,7 +11,7 @@ let Stadium = CoreObject.extend({
       state: "",
       location: {},
       roofType: ""
-    }
+    };
   },
 
   init() {

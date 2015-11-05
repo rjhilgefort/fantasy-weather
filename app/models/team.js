@@ -12,7 +12,7 @@ let Team = CoreObject.extend({
       logo: "",
       locationIdentifier: 'city',
       stadium: {}
-    }
+    };
   },
 
   init() {

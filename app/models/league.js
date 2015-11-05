@@ -10,7 +10,7 @@ let League = CoreObject.extend({
     return {
       name: "",
       teams: []
-    }
+    };
   },
 
   addTeam(team) {
