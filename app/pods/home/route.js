@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import CoreRoute from 'fantasy-weather/routes/core';
-import nfl from 'fantasy-weather/singletons/nfl'
+import nfl from 'fantasy-weather/singletons/nfl';
 
 export default CoreRoute.extend({
 
