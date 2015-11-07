@@ -1,6 +1,4 @@
-import Ember from 'ember';
-import CoreObject from 'fantasy-weather/models/_core/core-object'
-import _ from 'lodash/lodash'
+import CoreObject from 'fantasy-weather/models/_core/core-object';
 
 let Location = CoreObject.extend({
 
@@ -8,7 +6,7 @@ let Location = CoreObject.extend({
     return {
       lat: 0,
       lng: 0
-    }
+    };
   },
 
   toString() {

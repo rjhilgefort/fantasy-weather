@@ -13,7 +13,7 @@ export default Ember.Component.extend(defaults, {
       team = team.toLowerCase();
       url = `http://i.nflcdn.com/static/site/7.2/img/logos/teams-gloss-81x54/${team}.png`;
     } else {
-      url = 'http://cliparts.co/cliparts/yTk/A5b/yTkA5bxpc.gif'
+      url = 'http://cliparts.co/cliparts/yTk/A5b/yTkA5bxpc.gif';
     }
 
     return url;

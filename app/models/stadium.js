@@ -1,7 +1,5 @@
-import Ember from 'ember';
-import CoreObject from 'fantasy-weather/models/_core/core-object'
-import _ from 'lodash/lodash'
-import Location from 'fantasy-weather/models/location'
+import CoreObject from 'fantasy-weather/models/_core/core-object';
+import Location from 'fantasy-weather/models/location';
 
 let Stadium = CoreObject.extend({
 
