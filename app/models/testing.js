@@ -6,7 +6,7 @@ import EF from 'ember-flexure';
  * @name testing
  * @author rjhilgefort
  */
-export default EF.Model.extend({
+let testing = EF.Model.extend({
   // Attributes
   exString: EF.attr("string"),
   exNumber: EF.attr("number"),
@@ -17,3 +17,9 @@ export default EF.Model.extend({
   exHasMany: EF.hasMany("modelName"),
   exHasOne: EF.hasOne("modelName")
 });
+
+
+testing.reopenClass({
+});
+
+export default testing;
