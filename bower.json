@@ -11,10 +11,12 @@
     "ember-resolver": "~0.1.18",
     "jquery": "^1.11.3",
     "loader.js": "ember-cli/loader.js#3.2.1",
+    "lodash-extras": "*",
     "qunit": "~1.18.0",
     "bootstrap": "~3.3.2",
     "moment": ">= 2.8.0",
     "moment-timezone": ">= 0.1.0",
-    "weather-icons": "~2.0.10"
+    "weather-icons": "~2.0.10",
+    "lodash": "~3.10.1"
   }
 }
