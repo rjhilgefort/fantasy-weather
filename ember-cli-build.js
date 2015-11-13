@@ -1,6 +1,6 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var CliImport = require('./build/ember-cli-import');
+var CliImport = require('ember-cli-import');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
