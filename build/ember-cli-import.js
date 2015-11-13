@@ -19,7 +19,6 @@ function CliImport(app) {
 // ================================================================================
 
 CliImport.prototype.dep = function(dep, options) {
-  console.log(dep);
   this.app.import(dep, options);
 };
 
