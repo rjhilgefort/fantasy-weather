@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import _ from 'lodash/lodash';
 import AjaxService from 'ember-ajax/services/ajax';
 import moment from 'moment';
 

@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import _ from 'lodash/lodash';
 import defaults from 'fantasy-weather/mixins/defaults';
 
 export default Ember.Component.extend(defaults, {

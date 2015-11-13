@@ -1,7 +1,6 @@
 import NFL_SCHEDULE_DB from 'fantasy-weather/data/nfl-schedule-db';
 
 import Ember from 'ember';
-import _ from 'lodash/lodash';
 import moment from 'moment';
 
 let parseTeam = (team) => {

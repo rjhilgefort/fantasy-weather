@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import _ from 'lodash/lodash';
 
 export function weatherIcon(params) {
   let icon = _.first(params);
