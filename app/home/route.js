@@ -4,9 +4,15 @@ import nfl from 'fantasy-weather/singletons/nfl';
 
 export default CoreRoute.extend({
 
+  forecastio: Ember.inject.service(),
   nflSchedule: Ember.inject.service(),
 
   model() {
+    let nflSchedule = this.get('nflSchedule');
+
+    let weekCurrent = nflSchedule.weekCurrent();
+    console.log(nflSchedule.weekNumberCurrent());
+    console.log(weekCurrent);
 
     return Ember.RSVP.hash({
       nfl,
