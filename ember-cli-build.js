@@ -4,7 +4,9 @@ var CliImport = require('ember-cli-import');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    babel: {
+      optional: ['es7.decorators']
+    }
   });
   var cliImport = new CliImport(app);
 
