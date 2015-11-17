@@ -52,11 +52,10 @@ export default Ember.Service.extend({
           tuesday: __scheduleTuesdays[i-1].tuesday.clone().add(7, 'days')
         });
       }
-      this.set('__scheduleTuesdays', __scheduleTuesdays)
+      this.set('__scheduleTuesdays', __scheduleTuesdays);
     }
     return __scheduleTuesdays;
   },
-
 
   // Filter alias
   filter(query) {
