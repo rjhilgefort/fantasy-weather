@@ -9,8 +9,9 @@ export default CoreRoute.extend({
 
   model() {
     let nflSchedule = this.get('nflSchedule');
-    let weekCurrent = nflSchedule.weekCurrent();
-    debugger;
+    // let weekCurrent = nflSchedule.weekCurrent();
+    let weekCurrent = [_.last(nflSchedule.weekCurrent())];
+    console.log(weekCurrent);
     return Ember.RSVP.hash({ nfl, weekCurrent });
   }
 

@@ -1,12 +1,24 @@
 import Ember from 'ember';
+import nfl from 'fantasy-weather/singletons/nfl';
 
 export default Ember.Component.extend({
-  team: null,
+
+  // Passed in
+  game: null,
 
   init() {
     this._super(...arguments);
 
-    let location = this.get('team.stadium.location');
+    // Get game and validate
+    let game = this.get('game');
+    if (_.isBlank(game) ||
+        !_.isPlainObject(game) ||
+        !_.isString(game, 'home')
+    ) {
+      throw new Error('You must pass a game in to get weather!');
+    }
+
+    let location = nfl.findStadiumByAbbr(game.home);
 
     let forecastio = this.get('forecastio');
     forecastio.getLocationNow(location)
@@ -17,10 +29,6 @@ export default Ember.Component.extend({
         this.set('weather', response);
         return response;
       });
-
-    let nflSchedule = this.get('nflSchedule');
-    console.log(nflSchedule.team(this.get('team.abbr')));
-    this.get('team').set('schedule', nflSchedule.team(this.get('team.abbr')));
   },
 
   forecastio: Ember.inject.service(),
