@@ -7,6 +7,7 @@ import computed from 'ember-computed-decorators';
 const NFL_SEASON_FIRST_TUESDAY = new Date('09-08-2015');
 
 let parseTeam = (team) => {
+  team = _.ensureString(team);
   team = team.toUpperCase();
   team = _.trim(team);
   return team;
