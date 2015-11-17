@@ -1,6 +1,6 @@
 .row
-  each nfl.teams as |team i|
+  each weekCurrent as |game i|
     .col-md-4
-      team-weather team=team
+      game-weather game=game
 
 = outlet
