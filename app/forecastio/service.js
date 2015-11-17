@@ -40,11 +40,6 @@ export default AjaxService.extend({
   getLocationNow(location) {
     let now = moment().format();
     return this.getLocationTime(location.toString(), now);
-  },
-
-  getLocationThisSunday(location) {
-    let now = moment().format();
-    return this.getLocationTime(location.toString(), now);
   }
 
 });
