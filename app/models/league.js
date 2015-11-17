@@ -20,7 +20,18 @@ let League = CoreObject.extend({
   addTeams(teams) {
     _.forEach(teams, this.addTeam.bind(this));
     return teams;
+  },
+
+  findTeamByAbbr(abbr) {
+    let teams = this.get('teams');
+    return _.find(teams, { abbr });
+  },
+
+  findStadiumByAbbr(abbr) {
+    let team = this.findTeamByAbbr(abbr);
+    return _.get(team, 'stadium.location');
   }
+
 
 });
 
