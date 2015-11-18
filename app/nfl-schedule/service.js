@@ -79,7 +79,7 @@ export default Ember.Service.extend({
     }
 
     // Get previous Tuesday
-    date.day(-5);
+    if (date.day() !== 2) date.day(-5);
 
     // Return object
     let week;
