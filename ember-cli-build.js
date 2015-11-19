@@ -19,6 +19,6 @@ module.exports = function(defaults) {
   cliImport.bowerDevProd('/lodash-extras/dist/lodash-extras.js');
 
   var tree = app.toTree();
-  tree = decoratorGuards(tree, { files: ['**/*.js'] });
+  // tree = decoratorGuards(tree, { files: ['**/*.js'] });
   return tree;
 };
