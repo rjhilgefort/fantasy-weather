@@ -87,8 +87,14 @@ export default Ember.Service.extend({
 
     // testing
     if (false) {
-      date.add(2, 'days');
-      console.log('2 days', date.toString());
+      // tuesday through monday tests
+      previousTuesday(moment('2015-11-17'));
+      previousTuesday(moment('2015-11-18'));
+      previousTuesday(moment('2015-11-19'));
+      previousTuesday(moment('2015-11-20'));
+      previousTuesday(moment('2015-11-21'));
+      previousTuesday(moment('2015-11-22'));
+      previousTuesday(moment('2015-11-23'));
     }
 
     // Get previous Tuesday
