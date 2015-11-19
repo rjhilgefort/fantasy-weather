@@ -13,6 +13,19 @@ let parseTeam = (team) => {
   return team;
 };
 
+let previousTuesday = (date) => {
+  // Determine what the "current week" is
+  let startOfWeek = date.clone().startOf('week');
+  let diff = date.diff(startOfWeek, 'days');
+  if (diff < 2) date.subtract(diff + 1, 'days');
+
+  // Get tuesday of the "current week"
+  date.day(2);
+
+  // if you want it for some reason- it will already have been modified
+  return date;
+};
+
 export default Ember.Service.extend({
 
   init() {
@@ -79,7 +92,7 @@ export default Ember.Service.extend({
     }
 
     // Get previous Tuesday
-    if (date.day() !== 2) date.day(-5);
+    previousTuesday(date);
 
     // Return object
     let week;
