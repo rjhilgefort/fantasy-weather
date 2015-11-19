@@ -1,6 +1,7 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var CliImport = require('ember-cli-import');
+var decoratorGuards = require('broccoli-es7-decorator-jshint-guards');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -16,5 +17,7 @@ module.exports = function(defaults) {
   cliImport.bowerDevProd('/lodash/lodash.js');
   cliImport.bowerDevProd('/lodash-extras/dist/lodash-extras.js');
 
-  return app.toTree();
+  var tree = app.toTree();
+  tree = decoratorGuards(tree, { files: ['**/*.js'] });
+  return tree;
 };
