@@ -13,7 +13,7 @@ module.exports = function(defaults) {
   cliImport.bower('/weather-icons/css/weather-icons.css');
   cliImport.bowerFont('/weather-icons/font/weathericons-regular-webfont',  { destDir: 'font' })
 
-  cliImport.bower('/lodash/lodash.js');
+  cliImport.bowerDevProd('/lodash/lodash.js');
   cliImport.bowerDevProd('/lodash-extras/dist/lodash-extras.js');
 
   return app.toTree();
