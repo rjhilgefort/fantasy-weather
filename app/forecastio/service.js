@@ -19,11 +19,11 @@ export default AjaxService.extend({
 
     return this._super(url, options)
       .then((response) => {
-        console.log(response);
-        console.log(moment.unix(response.currently.time).format("MM/DD/YYYY"));
+        // console.log(response);
+        // console.log(moment.unix(response.currently.time).format("MM/DD/YYYY"));
         return response;
       }, (error) => {
-        console.error(error);
+        // console.error(error);
         throw error;
       });
   },
