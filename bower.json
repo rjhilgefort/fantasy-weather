@@ -15,7 +15,7 @@
     "moment": ">= 2.8.0",
     "moment-timezone": ">= 0.1.0",
     "weather-icons": "~2.0.10",
-    "lodash": "~3.10.1"
+    "lodash": "~3.10.1",
     "loader.js": "ember-cli/loader.js#3.4.0",
     "qunit": "~1.20.0"
   }

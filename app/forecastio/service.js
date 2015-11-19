@@ -14,7 +14,7 @@ export default AjaxService.extend({
   }),
 
   request(url, options) {
-    if (!_.isPlainObject(options)) options = {};
+    if (!_.isPlainObject(options)) { options = {}; }
     options.dataType = "jsonp";
 
     return this._super(url, options)
