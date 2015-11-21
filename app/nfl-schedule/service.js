@@ -6,26 +6,6 @@ import computed from 'ember-computed-decorators';
 
 const NFL_SEASON_FIRST_TUESDAY = new Date('09-08-2015');
 
-let parseTeam = (team) => {
-  team = _.ensureString(team);
-  team = team.toUpperCase();
-  team = _.trim(team);
-  return team;
-};
-
-let previousTuesday = (date) => {
-  // Determine what the "current week" is
-  let startOfWeek = date.clone().startOf('week');
-  let diff = date.diff(startOfWeek, 'days');
-  if (diff < 2) date.subtract(diff + 1, 'days');
-
-  // Get tuesday of the "current week"
-  date.day(2);
-
-  // if you want it for some reason- it will already have been modified
-  return date;
-};
-
 export default Ember.Service.extend({
 
   init() {
@@ -56,17 +36,7 @@ export default Ember.Service.extend({
   _scheduleTuesdays(__scheduleTuesdays) {
     // If value has not been populated yet- build it
     if (_.isBlank(__scheduleTuesdays)) {
-      __scheduleTuesdays = [{
-        week: 1,
-        tuesday: moment(NFL_SEASON_FIRST_TUESDAY)
-      }];
-      for (let i = 1; __scheduleTuesdays.length < 17; i++) {
-        __scheduleTuesdays.push({
-          week: i + 1,
-          tuesday: __scheduleTuesdays[i-1].tuesday.clone().add(7, 'days')
-        });
-      }
-      this.set('__scheduleTuesdays', __scheduleTuesdays);
+      this.set('__scheduleTuesdays', generateTuesdaysFromDate(NFL_SEASON_FIRST_TUESDAY));
     }
     return __scheduleTuesdays;
   },
@@ -85,22 +55,20 @@ export default Ember.Service.extend({
   weekNumberFromDate(date) {
     if (_.isDate(date)) date = moment(date);
 
-    // testing
+    // TODO: MOVE TO TESTS
     if (false) {
-      // tuesday through monday tests
-      previousTuesday(moment('2015-11-17'));
-      previousTuesday(moment('2015-11-18'));
-      previousTuesday(moment('2015-11-19'));
-      previousTuesday(moment('2015-11-20'));
-      previousTuesday(moment('2015-11-21'));
-      previousTuesday(moment('2015-11-22'));
-      previousTuesday(moment('2015-11-23'));
+      previousTuesday(moment('2015-11-17')); // Tuesday
+      previousTuesday(moment('2015-11-18')); // Wednesday
+      previousTuesday(moment('2015-11-19')); // Thursday
+      previousTuesday(moment('2015-11-20')); // Friday
+      previousTuesday(moment('2015-11-21')); // Saturday
+      previousTuesday(moment('2015-11-22')); // Sunday
+      previousTuesday(moment('2015-11-23')); // Monday
     }
 
     // Get previous Tuesday
     previousTuesday(date);
 
-    // Return object
     let week;
     let tuesdays = _.clone(this.get('_scheduleTuesdays'));
 
@@ -168,3 +136,41 @@ export default Ember.Service.extend({
   }
 
 });
+
+let parseTeam = (team) => {
+  team = _.ensureString(team);
+  team = team.toUpperCase();
+  team = _.trim(team);
+  return team;
+};
+
+let previousTuesday = (date) => {
+  // Determine what the "current week" is
+  let startOfWeek = date.clone().startOf('week');
+  let diff = date.diff(startOfWeek, 'days');
+  if (diff < 2) {
+    date.subtract(diff + 1, 'days');
+  }
+
+  // Get tuesday of the "current week"
+  date.day(2);
+
+  // if you want it for some reason- it will already have been modified
+  return date;
+};
+
+let generateTuesdaysFromDate = (dateString) => {
+  let ret = [{
+    week: 1,
+    tuesday: moment(dateString)
+  }];
+
+  for (let i = 1; ret.length < 17; i++) {
+    ret.push({
+      week: i + 1,
+      tuesday: ret[i-1].tuesday.clone().add(7, 'days')
+    });
+  }
+
+  return ret;
+};
