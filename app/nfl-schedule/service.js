@@ -8,14 +8,6 @@ const NFL_SEASON_FIRST_TUESDAY = new Date('09-08-2015');
 
 export default Ember.Service.extend({
 
-  init() {
-    this._super(...arguments);
-    // console.log(NFL_SCHEDULE_DB.length);
-  },
-
-  // _schedule: NFL_SCHEDULE_DB,
-
-
   /**
    * Private variable used to house the tuesdays array
    *
@@ -36,7 +28,8 @@ export default Ember.Service.extend({
   _scheduleTuesdays(__scheduleTuesdays) {
     // If value has not been populated yet- build it
     if (_.isBlank(__scheduleTuesdays)) {
-      this.set('__scheduleTuesdays', generateTuesdaysFromDate(NFL_SEASON_FIRST_TUESDAY));
+      __scheduleTuesdays = generateTuesdaysFromDate(NFL_SEASON_FIRST_TUESDAY);
+      this.set('__scheduleTuesdays', __scheduleTuesdays);
     }
     return __scheduleTuesdays;
   },
@@ -145,7 +138,8 @@ let parseTeam = (team) => {
 };
 
 let previousTuesday = (date) => {
-  // Determine what the "current week" is
+  // Determine what the "current week" is and modify it accordingly
+  // (so Tuesday is the effective start of the week)
   let startOfWeek = date.clone().startOf('week');
   let diff = date.diff(startOfWeek, 'days');
   if (diff < 2) {
