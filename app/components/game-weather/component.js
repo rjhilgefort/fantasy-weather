@@ -22,8 +22,7 @@ export default Ember.Component.extend({
       throw new Error('You must pass a game in to get weather!');
     }
 
-    // let location = nfl.findStadiumByAbbr(game.home);
-    let location = nfl.findStadiumByAbbr(game.away); // remove
+    let location = nfl.findStadiumByAbbr(game.home);
     let gameTime = getDateStringFromGame(game);
 
     let forecastio = this.get('forecastio');
