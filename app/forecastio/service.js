@@ -32,6 +32,12 @@ export default AjaxService.extend({
     return this.request(location.toString(), options);
   },
 
+  /**
+   * @param {FW.Stadium} location:
+   * @param {String} time: https://developer.forecast.io/docs/v2#time_call
+   * @param {Object} options:
+   * @return {Promise}
+   */
   getLocationTime(location, time, options) {
     let url = `${location.toString()},${time}`;
     return this.request(url, options);

@@ -9,11 +9,13 @@ export default CoreRoute.extend({
 
   model() {
     let nflSchedule = this.get('nflSchedule');
+
     // let weekCurrent = nflSchedule.weekCurrent();
     console.log('weeknumbercurrent', nflSchedule.weekNumberCurrent());
     console.log('weekcurrent', nflSchedule.weekCurrent());
-    let weekCurrent = _.find(nflSchedule.weekCurrent(), { away: "CIN" });
-    console.log(weekCurrent);
+    let weekCurrent = _.filter(nflSchedule.weekCurrent(), { away: "CIN" });
+    console.log('findWeekCurrent', weekCurrent);
+
     return Ember.RSVP.hash({ nfl, weekCurrent });
   }
 
