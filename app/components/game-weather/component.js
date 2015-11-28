@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import nfl from 'fantasy-weather/singletons/nfl';
 import moment from 'moment';
+import computed from 'ember-computed-decorators';
+import { getDateStringFromGame } from './utils';
 
 export default Ember.Component.extend({
 
@@ -8,7 +10,7 @@ export default Ember.Component.extend({
   nflSchedule: Ember.inject.service(),
 
   game: null, // passed in
-  weather: null,
+  weather: null, // setup on init
 
   init() {
     this._super(...arguments);
@@ -22,40 +24,24 @@ export default Ember.Component.extend({
       throw new Error('You must pass a game in to get weather!');
     }
 
-    let location = nfl.findStadiumByAbbr(game.home);
-    let gameTime = getDateStringFromGame(game);
-
     let forecastio = this.get('forecastio');
-    forecastio.getLocationTime(location, gameTime)
+    forecastio.getLocationTime(this.get('stadium'), getDateStringFromGame(game))
       .then((response) => this.set('weather', response));
+  },
+
+  @computed('game')
+  stadium(game) {
+    return nfl.findStadiumByAbbr(game.home);
+  },
+
+  @computed('game')
+  homeTeam(game) {
+    return nfl.findTeamByAbbr(game.home);
+  },
+
+  @computed('game')
+  awayTeam(game) {
+    return nfl.findTeamByAbbr(game.away);
   }
 
 });
-
-/**
- * Returns an ISO time format that forecastio likes
- * https://developer.forecast.io/docs/v2#time_call
- *
- * @name getDateStringFromGame
- * @param {Object} game
- *   @param {Number} year:
- *   @param {Number} month:
- *   @param {Number} day:
- *   @param {String} time:
- */
-let getDateStringFromGame = ({ year, month, day, time }) => {
-  if (
-    !_.isNumber(year) || !_.isNumber(month) ||
-    !_.isNumber(day) || !_.isString(time)
-  ) {
-    throw new Error('Not enough info on `game` object to get time');
-  }
-
-  let inputFormat = 'YYYY-MM-DD H:mm';
-  let dateString = moment(`${year}-${month}-${day} ${time}`, inputFormat);
-  if (!dateString.isValid()) throw new Error('game time could not be determined');
-
-  // Format: [YYYY]-[MM]-[DD]T[HH]:[MM]:[SS]
-  // let outputFormat = 'YYYY-MM-DDTHH:MM:SS'
-  return dateString.format();
-};

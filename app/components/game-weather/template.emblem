@@ -2,16 +2,16 @@
   .panel-heading
     .row
       .col-md-8
-        h3.panel-title #{team.name}
+        h3.panel-title #{homeTeam.name}
       .col-md-4
         .pull-right
-          team-logo team=team.abbr
+          team-logo team=homeTeam.abbr
   .panel-body
     li Team
     ul
-      li Full Name: #{team.fullName}
-      li Lat: #{team.stadium.location.lat}
-      li Lng: #{team.stadium.location.lng}
+      li Full Name: #{homeTeam.fullName}
+      li Lat: #{homeTeam.stadium.location.lat}
+      li Lng: #{homeTeam.stadium.location.lng}
     li Weather
     ul
       li Time: #{weather.currently.time}
