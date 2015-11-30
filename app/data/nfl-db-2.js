@@ -1,18 +1,22 @@
 export default [
   {
     name: "Bengals",
-    abbr: "CIN",
+    abbreviation: "CIN",
     logo: "",
     locationIdentifier: "city",
     stadium: {
       city: "Cincinnati",
       state: "Ohio",
-      name: "",
+      name: "Paul Brown Stadium",
       location: {
         lat: 39.095442,
         lng: -84.516039
       },
-      roofType: "open"
+      roof: "open",
+      turf: {
+        type: "synthetic",
+        description: "UBU Speed Series S5-M Synthetic Turf"
+      }
     }
   }
 ];

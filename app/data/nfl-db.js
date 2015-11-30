@@ -12,9 +12,9 @@ export default [
         lat: 37.713486,
         lng: -122.386256
       },
-      roofType: "open",
+      roof: "open",
       turf: {
-        type: "turf",
+        type: "grass",
         description: "Tifway II Bermuda Grass / Perennial Ryegrass mixture"
       }
     }
@@ -32,7 +32,7 @@ export default [
         lat: 41.862306,
         lng: -87.616672
       },
-      roofType: "open",
+      roof: "open",
       turf: {
         type: "grass",
         description: "Kentucky Bluegrass"
@@ -54,7 +54,7 @@ export default [
       },
       roof: "open",
       turf: {
-        type: "synthetic",
+        type: "turf",
         description: "UBU Speed Series S5-M Synthetic Turf"
       }
     }

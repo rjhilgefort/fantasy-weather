@@ -7,12 +7,16 @@ export default [
     stadium: {
       city: "San Francisco",
       state: "California",
-      name: "",
+      name: "Levi's Stadium",
       location: {
         lat: 37.713486,
         lng: -122.386256
       },
-      roofType: "open"
+      roof: "open",
+      turf: {
+        type: "grass",
+        description: "Tifway II Bermuda Grass / Perennial Ryegrass mixture"
+      }
     }
   },
   {
@@ -23,12 +27,16 @@ export default [
     stadium: {
       city: "Chicago",
       state: "Illinois",
-      name: "",
+      name: "Soldier Field",
       location: {
         lat: 41.862306,
         lng: -87.616672
       },
-      roofType: "",
+      roof: "open",
+      turf: {
+        type: "grass",
+        description: "Kentucky Bluegrass"
+      }
     }
   },
   {
@@ -39,44 +47,56 @@ export default [
     stadium: {
       city: "Cincinnati",
       state: "Ohio",
-      name: "",
+      name: "Paul Brown Stadium",
       location: {
         lat: 39.095442,
         lng: -84.516039
       },
-      roofType: "open"
+      roof: "open",
+      turf: {
+        type: "turf",
+        description: "UBU Speed Series S5-M Synthetic Turf"
+      }
     }
   },
   {
-    name: "Bengals",
-    abbreviation: "CIN",
+    name: "Bills",
+    abbreviation: "BUF",
     logo: "",
-    locationIdentifier: "city",
+    locationIdentifier: "Buffalo",
     stadium: {
-      city: "Cincinnati",
-      state: "Ohio",
-      name: "",
+      city: "Orchard Park",
+      state: "New York",
+      name: "Ralph Wilson Stadium",
       location: {
-        lat: 39.095442,
-        lng: -84.516039
+        lat: 42.773739,
+        lng: -78.786978
       },
-      roofType: "open"
+      roof: "open",
+      turf: {
+        type: "turf",
+        description: "A-Turf Titan"
+      }
     }
   },
   {
-    name: "Bengals",
-    abbreviation: "CIN",
+    name: "Broncos",
+    abbreviation: "DEN",
     logo: "",
     locationIdentifier: "city",
     stadium: {
-      city: "Cincinnati",
-      state: "Ohio",
-      name: "",
+      city: "Denver",
+      state: "Colorado",
+      name: "Sports Authority Field at Mile High",
       location: {
-        lat: 39.095442,
-        lng: -84.516039
+        lat: 39.743936,
+        lng: -105.020097
       },
-      roofType: "open"
+      roof: "open",
+      turf: {
+        type: "grass",
+        description: "Kentucky Bluegrass"
+      }
     }
   }
 ];
