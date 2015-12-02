@@ -22,13 +22,13 @@ let League = CoreObject.extend({
     return teams;
   },
 
-  findTeamByAbbr(abbr) {
+  findTeamByAbbr(abbreviation) {
     let teams = this.get('teams');
-    return _.find(teams, { abbr });
+    return _.find(teams, { abbreviation });
   },
 
-  findStadiumByAbbr(abbr) {
-    let team = this.findTeamByAbbr(abbr);
+  findStadiumByAbbr(abbreviation) {
+    let team = this.findTeamByAbbr(abbreviation);
     return _.get(team, 'stadium.location');
   }
 

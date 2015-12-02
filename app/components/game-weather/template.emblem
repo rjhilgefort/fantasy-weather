@@ -5,7 +5,7 @@
         h3.panel-title #{homeTeam.name}
       .col-md-4
         .pull-right
-          team-logo team=homeTeam.abbr
+          team-logo team=homeTeam.abbreviation
   .panel-body
     li Team
     ul
