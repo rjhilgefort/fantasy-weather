@@ -14,10 +14,8 @@ let Stadium = CoreObject.extend({
 
   init() {
     this._super(...arguments);
-
     this.set('location', Location.create(this.get('location')));
   }
-
 
 });
 

@@ -39,7 +39,6 @@ let Team = CoreObject.extend({
 
 });
 
-Team.reopenClass({
-});
+Team.reopenClass({});
 
 export default Team;
