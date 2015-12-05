@@ -1,4 +1,4 @@
-# Fantasy-weather
+# nfl-weather
 
 This project is aimed at showing the weather for the current week of the NFL season (based on current time).
 
