@@ -1,7 +1,10 @@
 import Ember from 'ember';
-import defaults from 'fantasy-weather/mixins/defaults';
 
-export default Ember.Component.extend(defaults, {
+export default Ember.Component.extend({
+  tagName: 'img',
+  classNames: ['panel-header'],
+  attributeBindings: ['url:src'],
+
   team: null,
 
   url: Ember.computed('team', function() {
