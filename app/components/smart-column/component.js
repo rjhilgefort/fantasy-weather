@@ -1,49 +1,46 @@
 import Ember from 'ember';
+import computed, { alias } from 'ember-computed-decorators';
 
 export default Ember.Component.extend({
   numPerRow: 4,
   index: null,
   total: null,
 
-  firstInList: Ember.computed('index', function() {
-    let index = this.get('index');
+  @computed('index')
+  firstInList(index) {
     return (index === 0);
-  }),
+  },
 
-  lastInList: Ember.computed('index', function() {
-    let index = this.get('index');
-    let total = this.get('total');
+  @computed('index', 'total')
+  lastInList(index, total) {
     return (index === (total - 1));
-  }),
+  },
 
-  columnSize: Ember.computed('numPerRow', function() {
-    let numPerRow = this.get('numPerRow');
+  @computed('numPerRow')
+  columnSize(numPerRow) {
     return (12 / numPerRow);
-  }),
+  },
 
-  positionInRow: Ember.computed('index', 'numPerRow', function() {
-    let index = this.get('index');
-    let numPerRow = this.get('numPerRow');
+  @computed('index', 'numPerRow')
+  positionInRow(index, numPerRow) {
     return (index % numPerRow);
-  }),
+  },
 
-  firstInRow: Ember.computed('positionInRow', function() {
-    let positionInRow = this.get('positionInRow');
+  @computed('positionInRow')
+  firstInRow(positionInRow) {
     return (positionInRow === 0);
-  }),
+  },
 
-  lastInRow: Ember.computed('positionInRow', 'numPerRow', function() {
-    let positionInRow = this.get('positionInRow');
-    let numPerRow = this.get('numPerRow');
+  @computed('positionInRow', 'numPerRow')
+  lastInRow(positionInRow, numPerRow) {
     return (positionInRow === numPerRow);
-  }),
+  },
 
-  needOpeningTag: Ember.computed.alias('firstInRow'),
+  @alias('firstInRow') needOpeningTag,
 
-  needClosingTag: Ember.computed('lastInList', 'lastInRow', function() {
-    let lastInList = this.get('lastInList');
-    let lastInRow = this.get('lastInRow');
+  @computed('lastInRow', 'lastInRow')
+  needClosingTag(lastInList, lastInRow) {
     return (lastInRow || lastInList);
-  })
+  }
 
 });

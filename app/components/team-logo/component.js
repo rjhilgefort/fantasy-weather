@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import computed from 'ember-computed-decorators';
 
 export default Ember.Component.extend({
   tagName: 'img',
@@ -7,8 +8,8 @@ export default Ember.Component.extend({
 
   team: null,
 
-  url: Ember.computed('team', function() {
-    let team = this.get('team');
+  @computed('team')
+  url(team) {
     let url;
 
     if (_.isString(team) && !_.isEmpty(team)) {
@@ -19,6 +20,6 @@ export default Ember.Component.extend({
     }
 
     return url;
-  })
+  }
 
 });
