@@ -25,6 +25,9 @@ export default Ember.Component.extend({
     }
 
     let forecastio = this.get('forecastio');
+
+    console.log('game', game);
+
     forecastio.getLocationTime(this.get('stadium'), getDateStringFromGame(game))
       .then((response) => {
         console.log('forecastio-response', response);
