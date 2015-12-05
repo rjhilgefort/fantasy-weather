@@ -16,7 +16,10 @@ export default CoreRoute.extend({
       weekCurrent = _.slice(weekCurrent, 0, 3);
     }
 
-    return Ember.RSVP.hash({ nfl, weekCurrent });
+    return Ember.RSVP.hash({
+      nfl,
+      weekCurrent
+    });
   }
 
 });

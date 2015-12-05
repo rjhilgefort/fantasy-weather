@@ -4,7 +4,7 @@
       .col-md-5: .pull-left
         h3.panel-title #{team-logo team=awayTeam.abbreviation} at #{team-logo team=homeTeam.abbreviation}
       .col-md-7: .pull-right
-        | game time
+        h3.panel-title #{game.wday}, #{game.time}
   .panel-body
     li Team
     ul
