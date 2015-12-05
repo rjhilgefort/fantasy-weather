@@ -1,3 +1,12 @@
+.page-header
+  .row
+    .col-md-3: .pull-left
+      h1 Week #{weekNumber}
+    .col-md-4: .pull-right
+      h1 #{weekStart}
+    .col-md-5: .pull-right
+      h1 NFL Weather
+
 .row
   each weekCurrent as |game i|
     .col-md-4
