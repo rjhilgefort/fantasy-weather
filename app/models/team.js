@@ -17,17 +17,19 @@ let Team = CoreObject.extend({
 
   init() {
     this._super(...arguments);
-
-    if (!_.contains(['city', 'state'], this.get('locationIdentifier'))) {
-      this.set('locationIdentifier', 'city');
-    }
-
     this.set('stadium', Stadium.create(this.get('stadium')));
   },
 
   @computed('locationIdentifier', 'stadium.city', 'stadium.state')
   locationName(locationIdentifier, city, state) {
-    return this.get(`stadium.${locationIdentifier}`);
+    let locationName = locationIdentifier;
+
+    // If there's an convention-based identifier, translate it
+    if (_.contains(['city', 'state'], locationName)) {
+      locationName = this.get(`stadium.${locationIdentifier}`);
+    }
+
+    return locationName;
   },
 
   @computed('locationName', 'name')
