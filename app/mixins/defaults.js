@@ -12,16 +12,16 @@ export default Ember.Mixin.create({
     return {};
   },
 
-  default(keyName, value) {
-    if (this.isBlank(keyName)) {
-      this.set(keyName, value);
+  default(key, value) {
+    if (this.isBlank(key)) {
+      this.set(key, value);
     }
     return value;
   },
 
   defaultProperties(hash) {
-    _.forEach(hash, (value, keyName) => {
-      this.default(keyName, value);
+    _.forEach(hash, (value, key) => {
+      this.default(key, value);
     });
     return hash;
   }
