@@ -120,6 +120,46 @@ export default [
     }
   },
   {
+    name: "Cardinals",
+    abbreviation: "ARI",
+    logo: "",
+    locationIdentifier: "state",
+    stadium: {
+      city: "Glendale",
+      state: "Arizona",
+      name: "University of Phoenix Stadium",
+      location: {
+        lat: 33.5277,
+        lng: -112.262608
+      },
+      roof: "retractable",
+      turf: {
+        type: "grass",
+        description: "Tifway 419 Bermuda Grass"
+      }
+    }
+  },
+  {
+    name: "Chiefs",
+    abbreviation: "KC",
+    logo: "",
+    locationIdentifier: "city",
+    stadium: {
+      city: "Kansas City",
+      state: "Missouri",
+      name: "Arrowhead Stadium",
+      location: {
+        lat: 39.048914,
+        lng: -94.484039
+      },
+      roof: "open",
+      turf: {
+        type: "grass",
+        description: "Latitude 36 Bermuda Grass"
+      }
+    }
+  },
+  {
     name: "Buccaneers",
     abbreviation: "TB",
     logo: "",
@@ -236,6 +276,26 @@ export default [
       turf: {
         type: "turf",
         description: "FieldTurf Classic HD"
+      }
+    }
+  },
+  {
+    name: "Eagles",
+    abbreviation: "PHI",
+    logo: "",
+    locationIdentifier: "city",
+    stadium: {
+      city: "Philadelphia",
+      state: "Pennsylvania",
+      name: "Lincoln Financial Field",
+      location: {
+        lat: 39.900775,
+        lng: -75.167453
+      },
+      roof: "open",
+      turf: {
+        type: "grass",
+        description: "Desso GrassMaster"
       }
     }
   },
