@@ -30,13 +30,20 @@ export default Ember.Service.extend({
    * @type Array
    */
   @computed('__scheduleTuesdays')
-  _scheduleTuesdays(__scheduleTuesdays) {
-    // If value has not been populated yet- build it
-    if (_.isBlank(__scheduleTuesdays)) {
-      __scheduleTuesdays = generateTuesdaysFromDate(NFL_SEASON_FIRST_TUESDAY);
-      this.set('__scheduleTuesdays', __scheduleTuesdays);
+  _scheduleTuesdays: {
+    get(__scheduleTuesdays) {
+      // If value has not been populated yet- build it
+      if (_.isBlank(__scheduleTuesdays)) {
+        __scheduleTuesdays = generateTuesdaysFromDate(NFL_SEASON_FIRST_TUESDAY);
+        this.set('__scheduleTuesdays', __scheduleTuesdays);
+      }
+      return __scheduleTuesdays;
+    },
+
+    set(value, __scheduleTuesdays) {
+      this.set('__scheduleTuesdays', value);
+      return value;
     }
-    return __scheduleTuesdays;
   },
 
   // Filter alias
