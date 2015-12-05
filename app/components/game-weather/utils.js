@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 /**
  * Returns an ISO time format that forecastio likes
  * https://developer.forecast.io/docs/v2#time_call
@@ -20,7 +22,9 @@ export var getDateStringFromGame = ({ year, month, day, time }) => {
 
   let inputFormat = 'YYYY-MM-DD H:mm';
   let dateString = moment(`${year}-${month}-${day} ${time}`, inputFormat);
-  if (!dateString.isValid()) throw new Error('game time could not be determined');
+  if (!dateString.isValid()) {
+    throw new Error('game time could not be determined');
+  }
 
   // Format: [YYYY]-[MM]-[DD]T[HH]:[MM]:[SS]
   // let outputFormat = 'YYYY-MM-DDTHH:MM:SS'

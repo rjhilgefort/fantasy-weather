@@ -3,6 +3,11 @@ import NFL_SCHEDULE_DB from 'fantasy-weather/data/nfl-schedule-db';
 import Ember from 'ember';
 import moment from 'moment';
 import computed from 'ember-computed-decorators';
+import {
+  parseTeam,
+  previousTuesday,
+  generateTuesdaysFromDate
+} from './utils';
 
 const NFL_SEASON_FIRST_TUESDAY = new Date('09-08-2015');
 
@@ -129,42 +134,3 @@ export default Ember.Service.extend({
   }
 
 });
-
-let parseTeam = (team) => {
-  team = _.ensureString(team);
-  team = team.toUpperCase();
-  team = _.trim(team);
-  return team;
-};
-
-let previousTuesday = (date) => {
-  // Determine what the "current week" is and modify it accordingly
-  // (so Tuesday is the effective start of the week)
-  let startOfWeek = date.clone().startOf('week');
-  let diff = date.diff(startOfWeek, 'days');
-  if (diff < 2) {
-    date.subtract(diff + 1, 'days');
-  }
-
-  // Get tuesday of the "current week"
-  date.day(2);
-
-  // if you want it for some reason- it will already have been modified
-  return date;
-};
-
-let generateTuesdaysFromDate = (dateString) => {
-  let ret = [{
-    week: 1,
-    tuesday: moment(dateString)
-  }];
-
-  for (let i = 1; ret.length < 17; i++) {
-    ret.push({
-      week: i + 1,
-      tuesday: ret[i-1].tuesday.clone().add(7, 'days')
-    });
-  }
-
-  return ret;
-};
