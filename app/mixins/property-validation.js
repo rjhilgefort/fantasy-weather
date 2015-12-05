@@ -2,12 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Mixin.create({
 
-  isBlank(keyName) {
-    return Ember.isBlank(this.get(keyName));
+  isBlank(key) {
+    return Ember.isBlank(this.get(key));
   },
 
-  isPresent(keyName) {
-    return !this.isBlank(keyName);
+  isPresent(key) {
+    return !this.isBlank(key);
   }
 
 });
