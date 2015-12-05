@@ -8,8 +8,8 @@ export default AjaxService.extend({
   _baseUrl: 'https://api.forecast.io/forecast',
   _apiKey: '4026230ad58e89e094134b200ddb843f',
 
-  @computed('_baseUrl', 'apikey')
-  host(_baseUrl, apiKey) {
+  @computed('_baseUrl', '_apiKey')
+  host(_baseUrl, _apiKey) {
     return `${_baseUrl}/${_apiKey}`;
   },
 
