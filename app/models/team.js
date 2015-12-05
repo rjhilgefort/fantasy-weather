@@ -1,7 +1,7 @@
 import Ember from 'ember';
+import computed from 'ember-computed-decorators';
 import CoreObject from 'fantasy-weather/models/_core/core-object';
 import Stadium from 'fantasy-weather/models/stadium';
-import computed from 'ember-computed-decorators';
 
 let Team = CoreObject.extend({
 
@@ -15,9 +15,10 @@ let Team = CoreObject.extend({
     };
   },
 
-  init() {
-    this._super(...arguments);
-    this.set('stadium', Stadium.create(this.get('stadium')));
+  _children() {
+    return {
+      stadium: Stadium
+    };
   },
 
   @computed('locationIdentifier', 'stadium.city', 'stadium.state')

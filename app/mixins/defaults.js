@@ -1,6 +1,5 @@
 import Ember from 'ember';
 
-// mixin validation
 export default Ember.Mixin.create({
 
   init() {
@@ -23,7 +22,6 @@ export default Ember.Mixin.create({
     _.forEach(hash, (value, key) => {
       this.default(key, value);
     });
-    return hash;
   }
 
 });

@@ -1,5 +1,6 @@
 import CoreObject from 'fantasy-weather/models/_core/core-object';
 import Location from 'fantasy-weather/models/location';
+import Turf from 'fantasy-weather/models/turf';
 
 let Stadium = CoreObject.extend({
 
@@ -7,19 +8,22 @@ let Stadium = CoreObject.extend({
     return {
       city: "",
       state: "",
+      name: "",
       location: {},
-      roof: ""
+      roof: "",
+      turf: {},
     };
   },
 
-  init() {
-    this._super(...arguments);
-    this.set('location', Location.create(this.get('location')));
+  _children() {
+    return {
+      location: Location,
+      turf: Turf
+    };
   }
 
 });
 
-Stadium.reopenClass({
-});
+Stadium.reopenClass({});
 
 export default Stadium;
