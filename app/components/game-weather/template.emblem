@@ -1,11 +1,10 @@
 .panel.panel-default
   .panel-heading
     .row
-      .col-md-8
-        h3.panel-title #{homeTeam.name}
-      .col-md-4
-        .pull-right
-          team-logo team=homeTeam.abbreviation
+      .col-md-5: .pull-left
+        h3.panel-title #{team-logo team=awayTeam.abbreviation} at #{team-logo team=homeTeam.abbreviation}
+      .col-md-7: .pull-right
+        | game time
   .panel-body
     li Team
     ul
