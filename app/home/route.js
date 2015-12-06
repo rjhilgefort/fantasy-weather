@@ -11,7 +11,7 @@ export default CoreRoute.extend({
     let nflSchedule = this.get('nflSchedule');
     let weekCurrent = nflSchedule.weekCurrent();
 
-    let debug = true;
+    let debug = false;
     if (debug) {
       weekCurrent = _.slice(weekCurrent, 0, 3);
     }
