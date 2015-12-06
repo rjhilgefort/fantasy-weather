@@ -32,10 +32,8 @@ let League = CoreObject.extend({
     return _.get(team, 'stadium.location');
   }
 
-
 });
 
-League.reopenClass({
-});
+League.reopenClass({});
 
 export default League;
